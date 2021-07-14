@@ -67,6 +67,9 @@ npm install -g ts-node
 # typeorm
 npm run typeorm
 ```
+```bash
+Start cli : node -r ts-node/register src/bookmarks/console.ts
+```
 
 ## Tips
 
