@@ -5,6 +5,14 @@
     <title>App</title>
   </head>
   <body>
-    {{ message }} - {{ user }} 
+    <h1>{{ message }}</h1>
+    <ul>
+      {{#with user}}
+      <li>{{ mail }}</li>
+      <li>{{ password }}</li>
+            <li>{{ isActive }}</li>
+      {{/with}}
+    </ul>
+
   </body>
 </html>

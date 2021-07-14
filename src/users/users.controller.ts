@@ -1,9 +1,14 @@
 import { Controller, Get, Param, Req, Request } from '@nestjs/common';
+import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
+    constructor(
+        private readonly userService: UsersService
+    ) {}
+
     @Get()
-    index(@Req() request: Request): string {    
+    indexAction(@Req() request: Request): string {    
       return `Users index`;
     }
     

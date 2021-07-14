@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Bookmark } from 'src/bookmarks/bookmark.entity';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
 
@@ -22,6 +23,10 @@ export class UsersService {
 
   findOne(id: string): Promise<User> {
     return this.usersRepository.findOne(id);
+  }
+
+  async findOnById($id: number): Promise<void> {
+    await this.usersRepository.findOne($id);
   }
 
   async remove(id: string): Promise<void> {

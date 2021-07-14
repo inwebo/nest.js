@@ -1,5 +1,7 @@
 import { Controller, Get, Render } from '@nestjs/common';
+import { of } from 'rxjs';
 import { AppService } from './app.service';
+import { Bookmark } from './bookmarks/bookmark.entity';
 import { User } from './users/user.entity';
 import { UsersService } from './users/users.service';
 
@@ -12,14 +14,13 @@ export class AppController {
 
   @Get()
   @Render('index')
-  getHello() {
-    const user = this.userService.findAll();
-
-    console.log(user);
-
+  async getHello() {
+    const user = this.userService.findOne("1");
     return { 
       message: this.appService.getHello(),
-      user: user,
+      user: await user.then((user) => {
+        return user;
+      })
     };
   }
 }

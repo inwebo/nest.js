@@ -5,7 +5,9 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 })
 
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({
+    type: 'integer'
+  })
   $id: number;
 
   @Column()
