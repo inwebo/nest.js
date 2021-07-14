@@ -61,6 +61,12 @@ $ npm run test:cov
 ## Support
 * [TypeORM](https://typeorm.io/#/)
 * [Sqlite3 driver](https://www.npmjs.com/package/sqlite3)
+* [TypeOrm CLI](https://typeorm.io/#/using-cli)
+```bash
+npm install -g ts-node
+# typeorm
+npm run typeorm
+```
 
 ## Support
 
