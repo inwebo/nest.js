@@ -76,7 +76,7 @@ npm run typeorm schema:sync
 ```
 ```bash
 # If you need to pass parameter with dash to npm script, you will need to add them after --. For example, if you need to generate, the command is like this:
-npm run typeorm migration:generate -- -n migrationNameHere
+npm run typeorm migration:generate -- -n migrationNameHere -d path
 ```
 * [Handlebars engine](https://github.com/pillarjs/hbs#readme)
 ## Support

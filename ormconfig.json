@@ -4,5 +4,10 @@
     "entities": [
         "dist/**/*.entity{.ts,.js}"
     ],
+    "migrations": ["migration/*.ts"],
+    "migrationsDir": 
+    [
+        "migration/*.ts"
+    ],
     "synchronize": true
   }
