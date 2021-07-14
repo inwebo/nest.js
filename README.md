@@ -60,7 +60,7 @@ $ npm run test:cov
 
 ## Support
 * [TypeORM](https://typeorm.io/#/)
-* 
+* [Sqlite3 driver](https://www.npmjs.com/package/sqlite3)
 
 ## Support
 
