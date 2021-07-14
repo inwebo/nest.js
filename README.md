@@ -59,6 +59,7 @@ $ npm run test:cov
 ```
 
 ## Support
+* [TypeORM](https://typeorm.io/#/)
 * 
 
 ## Support
