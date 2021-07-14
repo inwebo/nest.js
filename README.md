@@ -58,7 +58,7 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Default install
 * [TypeORM](https://typeorm.io/#/)
 * [Sqlite3 driver](https://www.npmjs.com/package/sqlite3)
 * [TypeOrm CLI](https://typeorm.io/#/using-cli)
@@ -66,6 +66,17 @@ $ npm run test:cov
 npm install -g ts-node
 # typeorm
 npm run typeorm
+```
+
+## Tips
+
+```bash
+# synchro schema
+npm run typeorm schema:sync
+```
+```bash
+# If you need to pass parameter with dash to npm script, you will need to add them after --. For example, if you need to generate, the command is like this:
+npm run typeorm migration:generate -- -n migrationNameHere
 ```
 * [Handlebars engine](https://github.com/pillarjs/hbs#readme)
 ## Support
