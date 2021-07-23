@@ -15,13 +15,31 @@ export class Bookmark {
     })
     md5: string;
 
-    @Column()
+    @Column({nullable: false})
     url: string;
 
-    @Column()
-    comment: string;
+    @Column({nullable: false})
+    title: string;
+
+    @Column({ type: 'datetime'})
+    createdAt: Date;
+
+    @Column({ type: 'datetime'})
+    updatedAt: Date;
+
+    @Column({nullable: true})
+    description: string;
+
+    @Column({nullable: false, default: true})
+    isPublic: boolean;
+
+    @Column({nullable: true})
+    icon: string;
+
+    @Column({nullable: true})
+    iconUri: string;
 
     @ManyToMany(() => Tag, tag => tag.$id)
     tags: Tag[];
-
+    
 }
