@@ -13,5 +13,5 @@ export class BookmarksService {
       findOne(id: string): Promise<Bookmark> {
         return this.bookmarkRepository.findOne(id);
       }
-      
+
 }
