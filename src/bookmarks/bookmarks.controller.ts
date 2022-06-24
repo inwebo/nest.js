@@ -1,10 +1,23 @@
-import { Controller, Get, Post, Req } from '@nestjs/common';
+import {
+    ClassSerializerInterceptor,
+    Controller,
+    Get,
+    HttpCode,
+    HttpStatus,
+    Post, Query,
+    Req,
+    UseInterceptors
+} from '@nestjs/common';
 import { Request } from 'express';
 import { TagssService } from './tags.service';
 import {getConnection} from "typeorm";
 
 import {Bookmark} from "./bookmark.entity";
 import * as JSON_DATA from '../../data/data.json' ;
+import {BookmarksDto} from "./DTO/bookmarks.dto";
+import Any = jasmine.Any;
+import {BookmarksService} from "./bookmarks.service";
+import {BookmarksOptionsDto} from "./DTO/bookmarks.options.dto";
 
 import { Logger } from '@nestjs/common';
 
@@ -12,10 +25,20 @@ const md5 = function(d){var r = M(V(Y(X(d),8*d.length)));return r.toLowerCase()}
 
 
 @Controller('bookmarks')
+@UseInterceptors(ClassSerializerInterceptor)
 export class BookmarksController {
   constructor(
     private readonly tagService: TagssService,
+    private readonly bookmarkService: BookmarksService
     ) {}
+
+    @Get()
+    @HttpCode(HttpStatus.OK)
+    async getBookmarks(
+        @Query() bookmarksOptionsDto: BookmarksOptionsDto
+    ): Promise<BookmarksDto<Any>> {
+        return this.bookmarkService.getBookmarks(bookmarksOptionsDto);
+    }
 
     @Post()
     create(): string {
@@ -48,7 +71,8 @@ export class BookmarksController {
               md5: md5(value.href),
               url: value.href,
               title: value.title,
-              description: ''
+              description: '',
+                createdAt: value.addDate
             }
          ])
         .execute();        
