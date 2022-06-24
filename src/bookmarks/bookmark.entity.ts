@@ -24,7 +24,7 @@ export class Bookmark {
     @Column({ type: 'datetime'})
     createdAt: Date;
 
-    @Column({ type: 'datetime'})
+    @Column({type: 'datetime', nullable: true})
     updatedAt: Date;
 
     @Column({nullable: true})

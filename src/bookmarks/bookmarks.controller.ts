@@ -45,7 +45,8 @@ export class BookmarksController {
               md5: md5(value.href),
               url: value.href,
               title: value.title,
-              description: ''
+              description: '',
+                createdAt: value.addDate
             }
          ])
         .execute();        
