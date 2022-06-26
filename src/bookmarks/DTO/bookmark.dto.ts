@@ -1,6 +1,6 @@
-import {IsString} from "class-validator";
+import { IsString } from 'class-validator';
 
 export class BookmarkDto {
-    @IsString()
-    readonly title: string;
+  @IsString()
+  readonly title: string;
 }

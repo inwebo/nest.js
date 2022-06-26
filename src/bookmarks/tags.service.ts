@@ -4,6 +4,4 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Tag } from './tag.entity';
 
 @Injectable()
-export class TagssService {
-
-}
+export class TagssService {}

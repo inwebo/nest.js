@@ -6,9 +6,7 @@ import { User } from './user.entity';
 
 @Injectable()
 export class UsersService {
-
-  public getRepository(): Repository<User>
-  {
+  public getRepository(): Repository<User> {
     return this.usersRepository;
   }
 

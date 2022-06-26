@@ -3,6 +3,6 @@ import { RoastmeController } from './roastme.controller';
 
 @Module({
   controllers: [RoastmeController],
-  exports: [RoastmeModule]
+  exports: [RoastmeModule],
 })
 export class RoastmeModule {}

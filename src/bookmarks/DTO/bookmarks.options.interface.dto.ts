@@ -1,6 +1,6 @@
-import {BookmarksOptionsDto} from "./bookmarks.options.dto";
+import { BookmarksOptionsDto } from './bookmarks.options.dto';
 
 export interface BookmarksOptionsInterfaceDto {
-    bookmarksOptionsDto: BookmarksOptionsDto;
-    itemCount: number;
+  bookmarksOptionsDto: BookmarksOptionsDto;
+  itemCount: number;
 }

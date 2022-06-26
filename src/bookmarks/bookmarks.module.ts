@@ -6,15 +6,13 @@ import { BookmarksController } from './bookmarks.controller';
 import { TagssService } from './tags.service';
 
 @Module({
-    imports: [
-        TypeOrmModule.forFeature([Bookmark])
-    ],
-    providers: [
-        BookmarksService,
-        TagssService,
-        //BookmarksImportService
-    ],
-    exports: [BookmarksModule],
-    controllers: [BookmarksController]
+  imports: [TypeOrmModule.forFeature([Bookmark])],
+  providers: [
+    BookmarksService,
+    TagssService,
+    //BookmarksImportService
+  ],
+  exports: [BookmarksModule],
+  controllers: [BookmarksController],
 })
-export class BookmarksModule { }
+export class BookmarksModule {}

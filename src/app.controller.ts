@@ -9,18 +9,18 @@ import { UsersService } from './users/users.service';
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    private readonly userService: UsersService
-    ) {}
+    private readonly userService: UsersService,
+  ) {}
 
   @Get()
   @Render('index')
   async getHello() {
-    const user = this.userService.findOne("1");
-    return { 
+    const user = this.userService.findOne('1');
+    return {
       message: this.appService.getHello(),
       user: await user.then((user) => {
         return user;
-      })
+      }),
     };
   }
 }

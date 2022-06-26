@@ -1,12 +1,11 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({
-  name: "user__user"
+  name: 'user__user',
 })
-
 export class User {
   @PrimaryGeneratedColumn({
-    type: 'integer'
+    type: 'integer',
   })
   $id: number;
 
@@ -17,5 +16,5 @@ export class User {
   password: string;
 
   @Column({ default: true, type: 'boolean' })
-  isActive: boolean; 
+  isActive: boolean;
 }

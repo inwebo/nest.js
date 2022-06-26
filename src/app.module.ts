@@ -13,7 +13,7 @@ import { RoastmeController } from './roastme/roastme.controller';
     TypeOrmModule.forRoot(),
     BookmarksModule,
     UsersModule,
-    RoastmeModule
+    RoastmeModule,
   ],
   controllers: [AppController, RoastmeController],
   providers: [AppService, Roastme],

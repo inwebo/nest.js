@@ -1,45 +1,52 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
 import { Tag } from './tag.entity';
 
 @Entity({
-    name: "bookmarks__bookmark"
+  name: 'bookmarks__bookmark',
 })
-  
 export class Bookmark {
-    @PrimaryGeneratedColumn()
-    $id: number;
-  
-    @Column({
-        unique: true,
-        length: 32,
-    })
-    md5: string;
+  @PrimaryGeneratedColumn()
+  $id: number;
 
-    @Column({nullable: false})
-    url: string;
+  @Column({
+    unique: true,
+    length: 32,
+  })
+  md5: string;
 
-    @Column({nullable: false})
-    title: string;
+  @Column({ nullable: false })
+  url: string;
 
-    @Column({ type: 'datetime'})
-    createdAt: Date;
+  @Column({ nullable: false })
+  title: string;
 
-    @Column({type: 'datetime', nullable: true})
-    updatedAt: Date;
+  @Column({ type: 'datetime' })
+  createdAt: Date;
 
-    @Column({nullable: true})
-    description: string;
+  @Column({ type: 'datetime', nullable: true })
+  updatedAt: Date;
 
-    @Column({nullable: false, default: true})
-    isPublic: boolean;
+  @Column({ nullable: true })
+  description: string;
 
-    @Column({nullable: true})
-    icon: string;
+  @Column({ nullable: false, default: true })
+  isPublic: boolean;
 
-    @Column({nullable: true})
-    iconUri: string;
+  @Column({ nullable: true })
+  icon: string;
 
-    @ManyToMany(() => Tag, tag => tag.$id)
-    tags: Tag[];
-    
+  @Column({ nullable: true })
+  iconUri: string;
+
+  @ManyToMany(() => Tag, (tag) => tag.$id)
+  @JoinTable({
+    name: 'bookmarks_has_tags',
+  })
+  tags: Tag[];
 }
