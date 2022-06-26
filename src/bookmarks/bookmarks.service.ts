@@ -30,12 +30,10 @@ export class BookmarksService {
             .skip(bookmarksOptionsDto.skip)
             .skip(bookmarksOptionsDto.take);
 
-        const count = await qb.getCount().then((count) => {
-            return count;
-        });
+        const count = await qb.getCount();
         const {entities} = await qb.getRawAndEntities();
 
-        const bookmarkMetaDto = new BookmarksMetaDto( bookmarksOptionsDto, 4672 );
+        const bookmarkMetaDto = new BookmarksMetaDto( bookmarksOptionsDto, count );
 
         return new BookmarksDto(entities, bookmarkMetaDto);
 
